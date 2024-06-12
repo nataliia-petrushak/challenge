@@ -114,9 +114,8 @@ def loginView(request):
 @rest_decorators.permission_classes([])
 def registerView(request):
     """This endpoint allows users to register a new account.
-    The user needs to provide a first_name, last_name, email, password, password2,
-    a valid email address, and a password. On successful
-    registration the message the account was created. """
+    The user needs to provide a first_name, last_name, email, password, password2. 
+    On successful registration user will get the message the account was created. """
 
     serializer = serializers.RegistrationSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
